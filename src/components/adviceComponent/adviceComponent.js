@@ -7,12 +7,17 @@ import './advice.css';
 export default function Advice() {
     const [advice, setAdvice] = useState('');
     const [countdown, setCountdown] = useState(false);
+    const [disabled, setDisabled] = useState(false);
 
     const fetchData = async () => {
+        setDisabled(true);
         setCountdown(true);
         const adviceData = await GetData();
         setAdvice(adviceData);
-        setTimeout(() => setCountdown(false), 2000);
+        setTimeout(() =>{ 
+            setCountdown(false)
+            setDisabled(false);
+        }, 2000);
     };
 
     useEffect(async () => {
@@ -41,7 +46,7 @@ export default function Advice() {
                 <Row>
                     <Col>
                     <div className='d-flex justify-content-center'>
-                       <button className={`dice ${countdown ? 'countdown' : ''}`} onClick={fetchData}></button>
+                       <button className={`dice ${countdown ? 'countdown' : ''}`} onClick={fetchData} disabled={disabled}></button>
                     </div>
                     </Col>
                 </Row>

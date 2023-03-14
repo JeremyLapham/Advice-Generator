@@ -92,6 +92,12 @@
   }
 }
 
+.dice.countdown::before {
+  animation-name: countdown;
+  border-color: #ff0000;
+  pointer-events: none;
+}
+
 .deskDivide {
   background-image: url(./assets/desktopDivide.svg);
   height: 1rem;
