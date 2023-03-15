@@ -69,7 +69,7 @@
   height: calc(100% + 4px);
   border-radius: inherit;
   border: 2px solid transparent;
-  animation-duration: 3s;
+  animation-duration: 2.5s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
@@ -82,7 +82,7 @@
 @keyframes countdown {
   0% {
     transform: rotate(0deg);
-    border-width: 12px;
+    border-width: 33px;
     opacity: 1;
   }
   100% {
